@@ -1,5 +1,5 @@
 (function() {
-  var clearResizeScroll, sendMessage, months;
+  var clearResizeScroll, sendMessage;
 
 
   conf = {
@@ -14,7 +14,6 @@
     cursorborder: "none"
   };
 
-  months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
   clearResizeScroll = function() {
     $("#text").val("");
@@ -26,7 +25,7 @@
     var innerText;
     innerText = $.trim($("#text").val());
     if (innerText !== "") {
-      $(".messages").append("<li class=\"i\"><div class=\"head\"><span class=\"time\">"+months[new Date().getUTCMonth()]+" "+new Date().getDate()+" "+new Date().getHours()+ ":"+new Date().getUTCMinutes()+"</span><span class=\"name\"></span></div><div class=\"message\">"+innerText+"</div></li>");
+      $(".messages").append("<li class=\"i\"><div class=\"head\"><span class=\"time\">"+new Date().getUTCString()+"</span><span class=\"name\"></span></div><div class=\"message\">"+innerText+"</div></li>");
       clearResizeScroll();
 
     }
