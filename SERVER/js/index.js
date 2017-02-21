@@ -1,5 +1,5 @@
 (function() {
-  var clearResizeScroll, sendMessage, months;
+  var clearResizeScroll, sendMessage;
 
 
   conf = {
@@ -14,8 +14,6 @@
     cursorborder: "none"
   };
 
-  months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
-
   clearResizeScroll = function() {
     $("#text").val("");
     $(".messages").getNiceScroll(0).resize();
@@ -25,13 +23,18 @@
   sendMessage = function() {
     var innerText;
     innerText = $.trim($("#text").val());
+    var packet = new Object();
+    packet.username = "Adam";
+    packet.message = innerText;
+    packet.date = new Date().toUTCString();
+    var myPacket = JSON.stringify(packet);
+    console.log(myPacket);
     if (innerText !== "") {
-      $(".messages").append("<li class=\"i\"><div class=\"head\"><span class=\"time\">"+months[new Date().getUTCMonth()]+" "+new Date().getDate()+" "+new Date().getHours()+ ":"+new Date().getUTCMinutes()+"</span><span class=\"name\"></span></div><div class=\"message\">"+innerText+"</div></li>");
+      $(".messages").append("<li class=\"i\"><div class=\"head\"><span class=\"time\">"+new Date().toUTCString()+"</span><span class=\"name\"></span></div><div class=\"message\">"+innerText+"</div></li>");
       clearResizeScroll();
 
     }
   };
-
   $(document).ready(function() {
     $(".list-friends").niceScroll(conf);
     $(".messages").niceScroll(lol);
