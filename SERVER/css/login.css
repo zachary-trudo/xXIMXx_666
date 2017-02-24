@@ -1,8 +1,14 @@
 body {
-    background-color: #009933;
+    background: url("../images/superbLogin.jpg") no-repeat center center fixed;
     text-align: center;
+    margin-top: 35%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: center;
 	}
-h1 {
-    margin-top: 20%;
-	text-align: center
+label {
+    position:center;
+    text-align: center;
 }
