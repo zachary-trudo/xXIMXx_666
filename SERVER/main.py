@@ -27,25 +27,13 @@ import CONFIG
 @app.route("/index")
 def index():
   app.logger.debug("Main page entry")
-  return flask.render_template('index.html')
+  return flask.render_template('login.html')
 
-@app.route("/")
 @app.route("/chatApp.html")
 def chatApp():
   app.logger.debug("Main page entry")
   return flask.render_template("chatApp.html")
 
-@app.route("/")
-@app.route('/js/<path:path>')
-def send_js(path):
-    return flask.send_from_directory('js', path)
-
-@app.route("/")
-@app.route('/css/<path:path>')
-def send_css(path):
-    return flask.send_from_directory('css', path)
-
-@app.route("/")
 @app.route('/images/<path:path>')
 def send_images(path):
     return flask.send_from_directory('images', path)

@@ -51,7 +51,7 @@ elif [[ $node =~ "ix" ]]; then
    echo "Configuring for shared CIS host ix-trusty or ix-dev"
    (( port = 1000 + ($RANDOM % 8000) ))
    gen_config > ../CONFIG.py
-   cp Makefile.ubuntu ../Makefile.local
+   cp Makefile.standard ../Makefile.local
    echo "CONFIG.py uses random port ${port}; you may edit for another value"
 
 else
