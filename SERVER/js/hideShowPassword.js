@@ -1,3 +1,5 @@
+//https://opensource.org/licenses/MIT LICENSE to use
+//http://cloudfour.github.io/hideShowPassword/ source of code
 (function (factory) {
 
   if (typeof define === 'function' && define.amd) {
@@ -163,9 +165,9 @@
         toggle: {
           className: 'hideShowPassword-toggle-hide',
           content: 'Hide',
-          attr: { 
+          attr: {
             'aria-pressed': 'true',
-            title: 'Hide Password' 
+            title: 'Hide Password'
           }
         }
       },
@@ -176,7 +178,7 @@
         toggle: {
           className: 'hideShowPassword-toggle-show',
           content: 'Show',
-          attr: { 
+          attr: {
             'aria-pressed': 'false',
             title: 'Show Password'
           }
