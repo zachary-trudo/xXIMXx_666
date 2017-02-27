@@ -1,11 +1,11 @@
 """ Simple module for file operations """
 import os
 import sys
-import yaml
+import json
 
 class FileOps(object):
-  def _get_yaml(self, fileName):
-    """ Gets the contents of a yaml file.
+  def _get_json(self, fileName):
+    """ Gets the contents of a json file.
 
     Args:
       fileName (str): String containing the path of the file.
@@ -16,36 +16,36 @@ class FileOps(object):
     contents = [] 
     try:
       with open(fileName, "r") as cf:
-        contents = yaml.load(cf)
+        contents = json.load(cf)
     except:
       pass
     return contents
 
-  def _put_yaml(self, fileName, item):
-    """ Appends item to yaml file.
+  def _put_json(self, fileName, item):
+    """ Appends item to json file.
 
     Args:
       fileName (str): String containing the path of the file.
       item (dict): Item we need to append.
     """
-    contents = self._get_yaml(fileName)
+    contents = self._get_json(fileName)
     try:
-      contents.extend(item)
+      contents.append(item)
       with open(fileName, "w") as cf:
-        cf.write(yaml.dump(contents))
+        json.dump(contents, cf)
     except:
       pass
 
   def open_contacts(self):
-    return self._get_yaml("contacts") 
+    return self._get_json("contacts") 
 
   def add_contact(self, contact):
-    self._put_yaml("contacts", contact)
+    self._put_json("contacts", contact)
 
   def get_messages(self):
-    return self._get_yaml("messages")
+    return self._get_json("messages")
 
   def put_messages(self, message):
-    self._put_yaml("messages", message)
+    self._put_json("messages", message)
 
 
