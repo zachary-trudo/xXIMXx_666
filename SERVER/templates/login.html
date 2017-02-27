@@ -3,24 +3,35 @@
 <head>
 	<meta charset ='utf-8'>
 	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
-	<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+	<link rel="stylesheet" type="text/css" href="../static/css/login.css">
+	<script src="../static/js/login.js"></script>
 </head>
 <body>
-	<h1>Superb Owl Login</h1>
-	<label>
-		Username:
-		<input type='text' id='username'></input>
-	</label>
-	<br>
-	<label>
-		Password:
-		<input type='text' id='password'></input>
-	</label>
-	<br><br>
-	<button id='busLogin' type = 'button'> Business Login </button>
+<div class="login">
+    <label class="login-label" for="username-3">Username</label>
+    <input class="login-field  login-field-username" id="username-3" type="text" placeholder="Username">
+    <br>
+    <label class="login-label" for="password-3">Password</label>
+    <input class="login-field  login-field-password" id="password" type="password" placeholder="Password">
+    <div class="login-footer">
+        <input type="checkbox" id="show-password"> <label for="show-password">Show password</label>
+    </div>
+</div>
+<br>
+    <button id='busLogin' type = 'button'> Business Login </button>
+    <button id='gameLogin' type = 'button'> Video Game Login </button>
 
-	<button id='gameLogin' type = 'button'> Video Game Login </button>
+<!-- including the jQuery dependency -->
+<script src="../static/js/jquery.min.js"></script>
+<!-- including the plugin -->
+<script src="../static/js/hideShowPassword.js"></script>
 
+<script>
+// - When checkbox changes, toggle password
+//   visibility based on its 'checked' property
+    $('#show-password').change(function(){
+        $('#password').hideShowPassword($(this).prop('checked'));
+    });
+</script>
 </body>
 </html>
