@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Superb Owl</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
 
 </head>
 <body>
@@ -15,14 +15,14 @@
 	</form>
 <menu class="list-friends">
 <li>
-    <img width="50" height="50" src="{{ url_for('static', filename='images/adeleTest.jpg') }}">
+    <img width="50" height="50" src="../static/images/adeleTest.jpg">
     <div class="info">
 	       <div class="user">Online Test</div>
 			<div class="status on"> online</div>
 	</div>
 </li>
 <li>
-    <img width="50" height="50" src="{{ url_for('static', filename='images/offTest.jpeg') }}">
+    <img width="50" height="50" src="../static/images/offTest.jpeg">
     <div class="info">
         <div class="user">Offline Test</div>
 		<div class="status off">offline</div>
@@ -32,8 +32,8 @@
 </div>
 <div class="chat">
     <div class="top">
-	<div class="avatar">	
-       <img width="50" height="50" src="{{ url_for('static', filename='images/owlLogo.jpeg') }}">
+	<div class="avatar">
+       <img width="50" height="50" src="../static/images/owlLogo.jpeg">
 	</div>
 	<div class="info">
 	<div class="name">Superb Owl Chat</div>
@@ -49,10 +49,10 @@
 </div>
 </div>
     <!--jquery.min.js gives the ability for using jquery-->
-    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="../static/js/jquery.min.js"></script>
     <!--jquery.niceScroll.js allows for a clean scroll in our chat application-->
-    <script src="{{ url_for('static', filename='js/jquery.nicescroll.js') }}"></script>
+    <script src="../static/js/jquery.nicescroll.js"></script>
     <!--idex.js provides the jquery functions for our chat app-->
-    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script src="../static/js/chat.js"></script>
 </body>
 </html>
