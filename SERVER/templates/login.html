@@ -3,7 +3,7 @@
 <head>
 	<meta charset ='utf-8'>
 	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="../static/css/login.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
 	<script src="../static/js/login.js"></script>
 </head>
 <body>
@@ -22,9 +22,9 @@
     <button id='gameLogin' type = 'button'> Video Game Login </button>
 
 <!-- including the jQuery dependency -->
-<script src="../static/js/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
 <!-- including the plugin -->
-<script src="../static/js/hideShowPassword.js"></script>
+<script src="{{ url_for('static', filename='js/hideShowPassword.js') }}"></script>
 
 <script>
 // - When checkbox changes, toggle password
