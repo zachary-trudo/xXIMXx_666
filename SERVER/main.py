@@ -8,6 +8,9 @@ from flask import render_template
 from flask import request
 from flask import url_for
 
+from fileops import FileOps
+fo = FileOps()
+
 import json
 import logging
 
@@ -37,6 +40,16 @@ def chatApp():
 @app.route('/images/<path:path>')
 def send_images(path):
     return flask.send_from_directory('images', path)
+
+@app.route('/receive_message', methods=['POST'])
+def receive_message():
+  print(request.json)
+  fo.put_messages(request.json)
+  return flask.json.jsonify(result=request.json)
+
+@app.route('/get_messages', methods=['GET'])
+def get_messages():
+  return flask.json.jsonify(result=fo.get_messages())
 
 @app.errorhandler(404)
 def page_not_found(error):
