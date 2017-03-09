@@ -36,7 +36,7 @@
       /sends packet to Server
       */
       $.ajax({
-          url:'/receive_message',
+          url:'/post_message',
           data: JSON.stringify(packet),
           type: 'POST',
           contentType: 'application/json',
