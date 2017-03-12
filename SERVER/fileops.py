@@ -36,7 +36,7 @@ class FileOps(object):
     except:
       pass
 
-  def open_contacts(self):
+  def get_contacts(self):
     return self._get_json("contacts") 
 
   def add_contact(self, contact):

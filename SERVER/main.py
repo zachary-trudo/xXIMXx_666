@@ -41,7 +41,7 @@ def chatApp():
 def send_images(path):
     return flask.send_from_directory('images', path)
 
-@app.route('/receive_message', methods=['POST'])
+@app.route('/post_message', methods=['POST'])
 def receive_message():
   print(request.json)
   fo.put_messages(request.json)
@@ -51,6 +51,27 @@ def receive_message():
 def get_messages():
   return flask.json.jsonify(result=fo.get_messages())
 
+@app.route('/post_user', methods=['POST'])
+def post_user():
+  print(request.json)
+  fo.add_contact(request.json)
+  return flask.json.jsonify(result=request.json)
+
+@app.route('/get_users', methods=['GET'])
+def get_users():
+  return flask.json.jsonify(result=fo.get_contacts())
+
+@app.route('/verify_user', methods=['POST'])
+def verify_user():
+  retVal = False
+  username = request.json["username"]
+  password = request.json["password"]
+  users = fo.get_contacts()
+  for user, passwd in users:
+    if user == username and passwd == password:
+      retVal = True
+  return flask.json.jsonify(result={"verified": retVal})
+  
 @app.errorhandler(404)
 def page_not_found(error):
     app.logger.debug("Page not found")
