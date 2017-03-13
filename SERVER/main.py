@@ -67,9 +67,12 @@ def verify_user():
   username = request.json["username"]
   password = request.json["password"]
   users = fo.get_contacts()
-  for user, passwd in users:
+  for contact in users:
+    user = contact.get("username", None)
+    passwd = contact.get("password", None)
     if user == username and passwd == password:
       retVal = True
+      break
   return flask.json.jsonify(result={"verified": retVal})
   
 @app.errorhandler(404)
