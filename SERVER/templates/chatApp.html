@@ -9,25 +9,8 @@
 <body>
     <div class="ui">
 	<div class="left-menu">
-	<form action="#" class="search">
-        <input placeholder="search..." type="search" name="" id="">
-        <input type="submit" value="&#xf002;">
-	</form>
+
 <menu class="list-friends">
-<li>
-    <img width="50" height="50" src="{{ url_for('static', filename='images/adeleTest.jpg') }}">
-    <div class="info">
-	       <div class="user">Online Test</div>
-			<div class="status on"> online</div>
-	</div>
-</li>
-<li>
-    <img width="50" height="50" src="{{ url_for('static', filename='images/offTest.jpeg') }}">
-    <div class="info">
-        <div class="user">Offline Test</div>
-		<div class="status off">offline</div>
-	</div>
-</li>
 </menu>
 </div>
 <div class="chat">
@@ -48,6 +31,15 @@
 </div>
 </div>
 </div>
+<button id = "original" type = "button"> Original Theme </button>
+<br>
+<button id = "doggo" type = "button"> Doggo Theme </button>
+<br>
+<button id = "owl" type = "button"> Owl Theme </button>
+<br>
+<button id = "llamas" type = "button"> Llama Theme </button>
+<br>
+<button id = "cat" type = "button"> Cat Theme </button>
     <!--jquery.min.js gives the ability for using jquery-->
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
     <!--jquery.niceScroll.js allows for a clean scroll in our chat application-->

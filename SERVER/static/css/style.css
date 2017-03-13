@@ -12,8 +12,8 @@ body {
 body {
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
-  background-image: -webkit-linear-gradient(top right, rgba(255, 255, 255, 0.6), transparent 60%, rgba(0, 0, 0, 0.6)), -webkit-linear-gradient(bottom right, #a0d3e4, #97d1e7);
-  background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.6), transparent 60%, rgba(0, 0, 0, 0.6)), linear-gradient(to top left, #a0d3e4, #97d1e7);
+  background-image: -webkit-linear-gradient(top right, rgba(255, 255, 255, 0.6), transparent 60%, rgba(0, 0, 0, 0.6)), -webkit-linear-gradient(bottom right, #000000, #ffff00);
+  background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.6), transparent 60%, rgba(0, 0, 0, 0.6)), linear-gradient(to top left, #000000, #ffff00);
 }
 .ui {
   margin: 10px auto;
@@ -62,7 +62,7 @@ body {
   box-sizing: content-box;
   padding-right: 1%;
   height: 100%;
-  background: #434753;
+  background: #003300;
 }
 .ui .chat {
   width: 70%;
@@ -125,7 +125,7 @@ body {
           flex: 1;
 }
 .ui .list-friends .user {
-  color: #fff;
+  color: #ffff00;
   margin-top: 12px;
 }
 .ui .list-friends .status {
@@ -185,14 +185,14 @@ body {
   top: 6px;
 }
 .ui .messages li .time {
-  color: #b7bccf;
+  color: #000000;
 }
 .ui .messages li .message {
-  margin-top: 20px;
-  color: #fff;
+  margin-top: 10px;
+  color: #ffff00;
   font-size: 15px;
   border-radius: 3px;
-  padding: 20px;
+  padding: 10px;
   line-height: 25px;
   max-width: 500px;
   word-wrap: break-word;
@@ -208,22 +208,7 @@ body {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }
-.ui .messages li.friend-with-a-SVAGina .name {
-  margin-left: 20px;
-}
-.ui .messages li.friend-with-a-SVAGina .name:after {
-  background-color: #62bf6e;
-  left: -20px;
-  top: 6px;
-}
-.ui .messages li.friend-with-a-SVAGina .message {
-  background-color: #62bf6e;
-  float: left;
-}
-.ui .messages li.friend-with-a-SVAGina .message:before {
-  left: 16px;
-  border-bottom-color: #62bf6e;
-}
+
 .ui .messages li.i .head {
   text-align: right;
 }
@@ -231,17 +216,17 @@ body {
   margin-right: 20px;
 }
 .ui .messages li.i .name:after {
-  background-color: #7bc4ef;
+  background-color: #006600;
   right: -20px;
   top: 6px;
 }
 .ui .messages li.i .message {
-  background-color: #7bc4ef;
+  background-color: #006600;
   float: right;
 }
 .ui .messages li.i .message:before {
   right: 16px;
-  border-bottom-color: #7bc4ef;
+  border-bottom-color: #006600;
 }
 .ui .write-form {
   height: 150px;
