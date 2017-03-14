@@ -67,11 +67,14 @@ def verify_user():
   username = request.json["username"]
   password = request.json["password"]
   users = fo.get_contacts()
-  for user, passwd in users:
+  for contact in users:
+    user = contact.get("username", None)
+    passwd = contact.get("password", None)
     if user == username and passwd == password:
       retVal = True
+      break
   return flask.json.jsonify(result={"verified": retVal})
-  
+
 @app.errorhandler(404)
 def page_not_found(error):
     app.logger.debug("Page not found")
@@ -86,7 +89,7 @@ def page_not_found(error):
 """
 @app.template_filter( 'fmtdate' )
 def format_arrow_date( date ):
-    try: 
+    try:
         normal = arrow.get( date )
         return normal.format("ddd MM/DD/YYYY")
     except:
@@ -94,7 +97,7 @@ def format_arrow_date( date ):
 
 """
 #############
-#    
+#
 # Set up to run from cgi-bin script, from
 # gunicorn, or stand-alone.
 #
@@ -104,4 +107,3 @@ app.logger.setLevel(logging.DEBUG)
 if __name__ == "__main__":
     print("Opening for global access on port {}".format(CONFIG.PORT))
     app.run(port=CONFIG.PORT, host="0.0.0.0")
-
